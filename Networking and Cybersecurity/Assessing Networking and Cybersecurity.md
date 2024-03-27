@@ -74,6 +74,11 @@ Networking and cybersecurity intersect with various domains of IT, including dat
 My prior work in networking and cybersecurity complements my experiences in other areas of IT, such as data analytics, systems development, and fraud detection. By leveraging my skills and expertise across these domains, I am equipped to tackle complex challenges and contribute effectively to organizational objectives related to security, data integrity, and fraud prevention.
 
 
+## Summary Statement
+
+In summary, my journey through the Networking and Cybersecurity curriculum has equipped me with a diverse set of skills and experiences essential for excelling in the field of information technology. From hands-on experience with tools like ShieldsUP&Nessus, NMAP, and WireShark to coursework on ransomware recovery and fraud detection, I have developed a solid foundation in network management, cybersecurity, and digital forensics. While I acknowledge areas for improvement, such as penetration testing and incident response planning, my commitment to ongoing learning and future aspirations align with the goals of the capstone project. By leveraging my strengths and experiences, I am prepared to contribute effectively to the portfolio and prototype representative project, developing innovative solutions and addressing emerging cybersecurity threats.
+
+
 ## Preparedness for Capstone
 
 With a solid foundation in networking and cybersecurity principles, hands-on experience, and proficiency in various tools and techniques like ShieldsUP&Nessus, NMAP, WireShark, and ransomware recovery, I am well-prepared to tackle real-world challenges in the field. My commitment to ongoing learning and aspirations to enhance skills align with the capstone project goals. Acknowledging areas for improvement and recognizing the integration of networking and cybersecurity with other IT domains, I am ready to contribute effectively to develop innovative solutions and address emerging cybersecurity threats.
