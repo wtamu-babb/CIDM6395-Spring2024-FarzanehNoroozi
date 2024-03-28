@@ -60,6 +60,7 @@ In this extended reflective appraisal, I will delve deeper into my journey throu
 Networking and cybersecurity are integrated with other areas of information technology due to their fundamental roles in ensuring the security, reliability, and efficiency of digital systems.
 
 ### Why Networking and Cybersecurity is Integratable with Other Areas
+
 Networking and cybersecurity intersect with various domains of IT, including data analytics, systems development, and fraud detection. By understanding network protocols, vulnerabilities, and attack vectors, professionals can design resilient systems, analyze data for security threats, and implement effective fraud detection mechanisms.
 
 ### How Networking and Cybersecurity is Integratable with Other Areas
@@ -71,6 +72,7 @@ Networking and cybersecurity intersect with various domains of IT, including dat
 **In fraud detection**, networking and cybersecurity expertise enables professionals to conduct audits, analyze data for fraudulent activities, and implement proactive security measures to prevent financial losses.
 
 ### How Networking and Cybersecurity is Integratable with Prior Work
+
 My prior work in networking and cybersecurity complements my experiences in other areas of IT, such as data analytics, systems development, and fraud detection. By leveraging my skills and expertise across these domains, I am equipped to tackle complex challenges and contribute effectively to organizational objectives related to security, data integrity, and fraud prevention.
 
 
