@@ -1,6 +1,5 @@
 # Employee Fraud Detection System
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
