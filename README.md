@@ -1,5 +1,7 @@
 # CIDM6395
 
+Hello, I'm Farzaneh Noroozi, a CISBA (Computer Information Systems and Business Analytics) student currently residing in the beautiful state of Washington.
+
 The WTAMU Graduate Catalog describes the requirements of the MS-CISBA program here:
 
 	https://catalog.wtamu.edu/preview_program.php?catoid=30&poid=4839&returnto=2643
