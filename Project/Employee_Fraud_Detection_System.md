@@ -23,6 +23,8 @@ I got the whole idea from CIDS 6356 to detect fraud in a company. The plan invol
 
 # Data Management
 
+I employed the same approach utilized for the project in CIDM 6355 and CIDM 6355 for this section.
+
 ### Data Management Problems
 
 The primary obstacle organizations face in combating employee fraud is the management and analysis of vast amounts of heterogeneous data. Employee activity logs, financial transactions, access control systems, and human resources databases all contain valuable information that, when integrated and analyzed effectively, can reveal patterns indicative of fraudulent behavior. However, the complexity and volume of this data present significant challenges in terms of collection, integration, preprocessing, and analysis.
@@ -92,7 +94,7 @@ The Employee Fraud Detection System is designed to cater to a wide range of user
 
 # Data Analytics & System Development
 
-The integrity of the database file, **myDB.db**, was meticulously verified using the SHA256 hash algorithm. The calculated hash number is **32912B9F25B591B92454BC4FA2CF146C275715CADEDA24DC85AA7E5A29A3D8FC**
+I employed the same approach utilized for the project in CIDM 5310 and CIDM 6303 for this section. The integrity of the database file, **myDB.db**, was meticulously verified using the SHA256 hash algorithm. The calculated hash number is **32912B9F25B591B92454BC4FA2CF146C275715CADEDA24DC85AA7E5A29A3D8FC**
 
 ![image](https://github.com/wtamu-babb/CIDM6395-Spring2024-FarzanehNoroozi/assets/125631781/184d1e9c-3579-404c-a0f2-7d316da5fd47)
 Image 1: Verification of Hash and File Information
@@ -181,7 +183,7 @@ The query confirms that there are no occurrences of returns processed with an un
 
 # Networking and Cybersecurity Measures
 
-To ensure the security and integrity of our Employee Fraud Detection System, we could implement the following networking and cybersecurity measures:
+I employed the same approach utilized for the homework in CIDM 6340 for this section. To ensure the security and integrity of our Employee Fraud Detection System, we could implement the following networking and cybersecurity measures:
 
 **Secure Data Transmission Protocols:** All communication within the system, including data transmission between the frontend interface, backend servers, and database, could be encrypted using HTTPS (HTTP over SSL/TLS) protocols. This ensures that sensitive data exchanged over networks is protected from interception or tampering by unauthorized parties.
 
