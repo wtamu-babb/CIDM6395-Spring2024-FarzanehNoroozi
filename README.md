@@ -9,10 +9,10 @@ Here is the hint I showed you: https://pythonspot.com/sqlite-database-with-panda
 
 # CIDM6395
 
-#About Me...
+## About Me...
 
-![alt text](<Formal Picture.jpg>)
 
+![alt text](<Formal Picture-1.jpg>)
 
 I'm Farzaneh Noroozi, a CISBA (Computer Information Systems and Business Analytics) student currently immersed in the vibrant landscape of Washington state. My journey is defined by an insatiable curiosity for unraveling the intricacies of data and fortifying digital frontiers against emerging threats.
 
