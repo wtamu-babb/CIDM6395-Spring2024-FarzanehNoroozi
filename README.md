@@ -5,6 +5,8 @@
 4. When you read the fake receipts back into the Notebook, loop through the list and flag (identify) potentially fraudelent 
 records and print them
 
+Here is the hint I showed you: https://pythonspot.com/sqlite-database-with-pandas/
+
 # CIDM6395
 
 Hello, I'm Farzaneh Noroozi, a CISBA (Computer Information Systems and Business Analytics) student currently residing in the beautiful state of Washington.
