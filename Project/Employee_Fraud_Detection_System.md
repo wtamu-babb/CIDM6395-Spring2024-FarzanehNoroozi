@@ -102,10 +102,10 @@ Image 1: Verification of Hash and File Information
 **Returns Processed by the Same Employee without a Receipt**
 
 ```
-SELECT E.EmployeeID, E.Name AS EmployeeName, COUNT(*) as NumReturns
-FROM Returns R
+SELECT E.EmployeeID, E.Name AS EmployeeName, COUNT(*) AS NumReturns
+FROM Return R
 JOIN Employee E ON R.EmployeeID = E.EmployeeID
-WHERE R.IsReceiptPresent = 'False'
+WHERE R.IsReceiptPresent = 0
 GROUP BY R.EmployeeID, E.Name
 HAVING NumReturns > 1;
 ```
@@ -118,10 +118,11 @@ The average number of returns processed by an employee without a receipt is 29.0
 **Returns with Debit/Credit Card Refund and No Original Receipt**
 
 ```
-SELECT E.EmployeeID, E.Name AS EmployeeName, COUNT(*) as NumReturnsWithoutReceipt
-FROM Returns R
+SELECT E.EmployeeID, E.Name AS EmployeeName, COUNT(*) AS NumReturnsWithoutReceipt
+FROM Return R
 JOIN Employee E ON R.EmployeeID = E.EmployeeID
-WHERE R.IsReceiptPresent = 'False' AND R.CreditCardNum IS NOT NULL
+JOIN Customer C ON R.CustomerID = C.CustomerID
+WHERE R.IsReceiptPresent = 0 AND C.CreditCardNum IS NOT NULL
 GROUP BY E.EmployeeID, E.Name;
 ```
 
@@ -133,12 +134,13 @@ The analysis examines returns processed by each employee where credit/debit card
 **Returns Processed by each employee without Receipts and with Credit Card Transactions**
 
 ```
-SELECT e.EmployeeID, e.Name, 
-       COUNT(CASE WHEN r.IsReceiptPresent = FALSE THEN 1 END) AS ReturnsWithoutReceipts,
-       COUNT(CASE WHEN r.CreditCardNum IS NOT NULL THEN 1 END) AS CreditCardTransactions
-FROM employee e
-LEFT JOIN returns r ON e.EmployeeID = r.EmployeeId
-GROUP BY e.EmployeeID, e.Name;
+SELECT E.EmployeeID, E.Name, 
+       SUM(CASE WHEN R.IsReceiptPresent = 'False' THEN 1 ELSE 0 END) AS ReturnsWithoutReceipts,
+       SUM(CASE WHEN C.CreditCardNum IS NOT NULL THEN 1 ELSE 0 END) AS CreditCardTransactions
+FROM Employee E
+LEFT JOIN Return R ON E.EmployeeID = R.EmployeeID
+LEFT JOIN Customer C ON R.CustomerID = C.CustomerID
+GROUP BY E.EmployeeID, E.Name;
 ```
 ![image](https://github.com/wtamu-babb/CIDM6395-Spring2024-FarzanehNoroozi/assets/125631781/b1e1d74b-fb55-4874-b21d-1c59cc3216ac)
 Table 3: Employee without Receipts and with Credit Card Transactions
@@ -149,9 +151,10 @@ This data could be used to assess employee performance in terms of adherence to 
 **Returns Processed with Different Employee IDs but Same Customer Information**
 
 ```
-SELECT CustomerName, Street, City, State, CustomerPhone, COUNT(DISTINCT EmployeeID) AS NumEmployees
-FROM Returns
-GROUP BY CustomerName, Street, City, State, CustomerPhone
+SELECT C.CustomerName, C.Street, C.City, C.State, C.CustomerPhone, COUNT(DISTINCT R.EmployeeID) AS NumEmployees
+FROM Return R
+JOIN Customer C ON R.CustomerID = C.CustomerID
+GROUP BY C.CustomerName, C.Street, C.City, C.State, C.CustomerPhone
 HAVING NumEmployees > 1;
 ```
 
@@ -161,8 +164,8 @@ The query identifies instances where returns are processed with different employ
 
 ```
 SELECT ReturnId, ReturnPrice
-FROM Returns
-WHERE ReturnPrice > (SELECT AVG(ReturnPrice) * 2 FROM Returns);
+FROM Return
+WHERE ReturnPrice > (SELECT AVG(ReturnPrice) * 2 FROM Return);
 ```
 ![image](https://github.com/wtamu-babb/CIDM6395-Spring2024-FarzanehNoroozi/assets/125631781/a30ad296-57b8-4d86-8dfa-fd0ba053d473)
 
@@ -174,9 +177,9 @@ The query reveals 135 returns flagged for unusually high prices. The highest ret
 
 ```
 SELECT EmployeeID, COUNT(*) AS NumTransactions
-FROM Returns
+FROM Return
 GROUP BY EmployeeID
-HAVING COUNT(*) > (SELECT AVG(NumTransactions) * 2 FROM (SELECT EmployeeID, COUNT(*) AS NumTransactions FROM Returns GROUP BY EmployeeID) AS T);
+HAVING COUNT(*) > (SELECT AVG(NumTransactions) * 2 FROM (SELECT EmployeeID, COUNT(*) AS NumTransactions FROM Return GROUP BY EmployeeID) AS T);
 ```
 
 The query confirms that there are no occurrences of returns processed with an unusually high number of transactions per employee. By analyzing each employee's transaction count and comparing it to double the average count, it ensures consistency across the board. This finding reflects a stable and controlled environment for return processing, where no employee demonstrates an abnormal surge in transactions, ensuring operational integrity.
