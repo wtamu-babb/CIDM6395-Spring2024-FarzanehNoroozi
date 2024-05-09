@@ -112,7 +112,7 @@ HAVING NumReturns > 1;
 
 ![alt text](1-1.PNG)
 
-The average number of returns processed by an employee without a receipt is 29.04, with a standard deviation of 8.33, indicating the variability in this process across employees. To identify outliers, employees whose number of returns without a receipt significantly deviates from the average, considering a deviation of more than one standard deviation, are examined. Notably, Steven Curtis (EmployeeID: 79023) processed 46 returns without a receipt, followed by George Stevens (EmployeeID: 52272) with 40 returns, Angela Diaz (EmployeeID: 29733) with 38 returns, Dr. Thomas Weiss PhD (EmployeeID: 27935) with 36 returns, and Chad Dawson (EmployeeID: 61373) with 35 returns. These individuals demonstrate a significantly higher-than-average volume of returns processed without a receipt, suggesting a need for further investigation to understand the underlying reasons and ensure adherence to company policies regarding return procedures.
+The analysis reveals that employees exhibit varying frequencies in processing returns without a receipt. Notably, Anthony Martinez stands out with 35 such returns, closely followed by Sarah Hess, Carlos Frazier, and others. With a standard deviation of 3.8, we observe a moderate level of dispersion in the number of returns processed without a receipt across employees. This suggests some variability in performance among employees, albeit within a relatively constrained range. Further investigation into factors contributing to this variance, such as transaction processing protocols and employee training, may offer insights into optimizing efficiency and consistency in handling returns without receipts.
 
 **Returns with Debit/Credit Card Refund and No Original Receipt**
 
@@ -127,7 +127,7 @@ GROUP BY E.EmployeeID, E.Name;
 
 ![alt text](2.PNG)
 
-The analysis examines returns processed by each employee where credit/debit cards were used for refunds without original receipts. Steven Curtis leads with 46 returns, followed closely by George Stevens with 40 and Angela Diaz with 38. The distribution highlights varying levels of adherence to return policies, prompting the need for further investigation into why original receipts are missing in these transactions. To address this, regular training sessions and system improvements to prompt receipt verification are recommended to ensure compliance and minimize potential errors or fraud in return processing procedures.
+Upon analysis, it's evident that employees handle returns involving debit/credit card refunds and no original receipt with varying frequencies. Notably, Anthony Martinez and Sarah Hess top the list with 36 and 35 such returns, respectively. With a standard deviation of 4.07, we observe a slightly higher level of dispersion compared to the previous query, indicating a broader range of variability in handling these specific types of returns among employees. This variance may stem from factors such as transaction complexity, customer interactions, and adherence to refund policies. Identifying and addressing the underlying causes of this variability can aid in standardizing processes, enhancing employee training, and ultimately improving the efficiency and consistency of handling returns with debit/credit card refunds and no original receipt.
 
 **Returns Processed by each employee without Receipts and with Credit Card Transactions**
 
@@ -157,7 +157,7 @@ HAVING NumEmployees > 1;
 
 ![alt text](4.PNG)
 
-The query identifies instances where returns are processed with different employee IDs but share the same customer information. By grouping returns based on customer details and counting distinct employee IDs, it detects potential inconsistencies in handling returns for the same customer. However, the result reveals no such occurrences, indicating that the return process maintains consistency in associating each customer with a single employee, ensuring accuracy and preventing redundancy in customer service interactions.
+In this analysis, we've identified that out of a total of 364 customers, 276 customers had returns processed by 2 employees, 64 customers by 3 employees, 21 customers by 4 employees, and 2 customers by 5 employees. This indicates a significant number of customers with returns handled by multiple employees, suggesting potential inconsistencies in service provision. To address this issue, it's crucial to identify and rectify the root causes, such as variations in employee training or communication practices. 
 
 **Returns Processed with Unusually High Return Price**
 
