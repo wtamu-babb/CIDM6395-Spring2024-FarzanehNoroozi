@@ -110,8 +110,7 @@ GROUP BY R.EmployeeID, E.Name
 HAVING NumReturns > 1;
 ```
 
-![image](https://github.com/wtamu-babb/CIDM6395-Spring2024-FarzanehNoroozi/assets/125631781/796040b1-8db2-4dc0-96a9-2c2777a82d10)
-Table 1: Returns Processed by the Same Employee without a Receipt
+![alt text](1-1.PNG)
 
 The average number of returns processed by an employee without a receipt is 29.04, with a standard deviation of 8.33, indicating the variability in this process across employees. To identify outliers, employees whose number of returns without a receipt significantly deviates from the average, considering a deviation of more than one standard deviation, are examined. Notably, Steven Curtis (EmployeeID: 79023) processed 46 returns without a receipt, followed by George Stevens (EmployeeID: 52272) with 40 returns, Angela Diaz (EmployeeID: 29733) with 38 returns, Dr. Thomas Weiss PhD (EmployeeID: 27935) with 36 returns, and Chad Dawson (EmployeeID: 61373) with 35 returns. These individuals demonstrate a significantly higher-than-average volume of returns processed without a receipt, suggesting a need for further investigation to understand the underlying reasons and ensure adherence to company policies regarding return procedures.
 
@@ -126,8 +125,7 @@ WHERE R.IsReceiptPresent = 0 AND C.CreditCardNum IS NOT NULL
 GROUP BY E.EmployeeID, E.Name;
 ```
 
-![image](https://github.com/wtamu-babb/CIDM6395-Spring2024-FarzanehNoroozi/assets/125631781/b3499462-0182-47e8-bf4c-240564bfd9e2)
-Table 2: The count of returns without receipts processed by each employee
+![alt text](2.PNG)
 
 The analysis examines returns processed by each employee where credit/debit cards were used for refunds without original receipts. Steven Curtis leads with 46 returns, followed closely by George Stevens with 40 and Angela Diaz with 38. The distribution highlights varying levels of adherence to return policies, prompting the need for further investigation into why original receipts are missing in these transactions. To address this, regular training sessions and system improvements to prompt receipt verification are recommended to ensure compliance and minimize potential errors or fraud in return processing procedures.
 
@@ -142,8 +140,7 @@ LEFT JOIN Return R ON E.EmployeeID = R.EmployeeID
 LEFT JOIN Customer C ON R.CustomerID = C.CustomerID
 GROUP BY E.EmployeeID, E.Name;
 ```
-![image](https://github.com/wtamu-babb/CIDM6395-Spring2024-FarzanehNoroozi/assets/125631781/b1e1d74b-fb55-4874-b21d-1c59cc3216ac)
-Table 3: Employee without Receipts and with Credit Card Transactions
+![alt text](3.PNG)
 
 we can observe that each employee has successfully processed credit card transactions, with varying numbers of such transactions. Additionally, none of the employees have processed returns without receipts. This indicates a high level of adherence to company policies regarding return procedures and suggests efficient handling of credit card transactions across the board.
 This data could be used to assess employee performance in terms of adherence to company policies regarding returns and credit card transactions. It also provides insights into areas where further training or guidance may be needed, such as ensuring consistent compliance with return policies or optimizing credit card transaction processes.
@@ -158,6 +155,8 @@ GROUP BY C.CustomerName, C.Street, C.City, C.State, C.CustomerPhone
 HAVING NumEmployees > 1;
 ```
 
+![alt text](4.PNG)
+
 The query identifies instances where returns are processed with different employee IDs but share the same customer information. By grouping returns based on customer details and counting distinct employee IDs, it detects potential inconsistencies in handling returns for the same customer. However, the result reveals no such occurrences, indicating that the return process maintains consistency in associating each customer with a single employee, ensuring accuracy and preventing redundancy in customer service interactions.
 
 **Returns Processed with Unusually High Return Price**
@@ -167,11 +166,8 @@ SELECT ReturnId, ReturnPrice
 FROM Return
 WHERE ReturnPrice > (SELECT AVG(ReturnPrice) * 2 FROM Return);
 ```
-![image](https://github.com/wtamu-babb/CIDM6395-Spring2024-FarzanehNoroozi/assets/125631781/a30ad296-57b8-4d86-8dfa-fd0ba053d473)
 
-Table 4: Returns Processed with Unusually High Return Price
-
-The query reveals 135 returns flagged for unusually high prices. The highest return price, at 1290690993, indicates a significant outlier. Even the lowest return price, 131529198, remains notably high. To enhance security, implementing a rule in company policies to audit such high-value returns could be beneficial.
+The query reveals no returns flagged for unusually high prices. To enhance security, implementing a rule in company policies to audit such high-value returns could be beneficial.
 
 **Returns Processed with Unusually High Number of Transactions per Employee**
 
