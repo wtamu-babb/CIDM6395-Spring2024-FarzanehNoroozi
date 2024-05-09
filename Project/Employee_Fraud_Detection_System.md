@@ -18,7 +18,7 @@ The system will analyze employee behavioral data, financial transactions, and ac
 
 **Data Collection and Integration**
 
-I got the whole idea from CIDS 6356 to detect fraud in a company. The plan involves generating synthetic data, as discussed in CIDM 6356, to simulate financial transactions, access control systems, and HR databases. Here is the [link](https://colab.research.google.com/drive/1dC8_t5cWOVFR99QX-lVKg7piPT5VDL6M) to the code for making fake data. Since each time the result would be different Please find the database [here](https://drive.google.com/file/d/1JKW-ZM8iB3Lc0MUO3thiHeVc6DMuIgfV/view).
+I got the whole idea from CIDS 6356 to detect fraud in a company. The plan involves generating synthetic data, as discussed in CIDM 6356, to simulate financial transactions, access control systems, and HR databases. Here is the [link](https://colab.research.google.com/drive/19tvWCtN1lWTZddB8RDBThGfwwkEvzuc7#scrollTo=UgY7rzoTk9_G) to the code for making fake data. Since each time the result would be different Please find the database [here](https://drive.google.com/file/d/1m7Fv_hIkJsBPsNvckV2Rykx0ZvH9uo_w/view?usp=sharing).
 
 
 # Data Management
